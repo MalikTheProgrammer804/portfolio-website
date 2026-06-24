@@ -11,15 +11,25 @@ function Projects() {
     axios
       .get("https://api.github.com/users/MalikTheProgrammer804/repos")
       .then((res) => {
-        const sorted = res.data
-          .sort((a, b) => b.stargazers_count - a.stargazers_count);
+        const sorted = res.data.sort(
+          (a, b) => b.stargazers_count - a.stargazers_count
+        );
 
         setRepos(sorted.slice(0, 6));
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
-        setError("Failed to load projects");
+        console.error(err);
+
+        setRepos([
+          {
+            id: 1,
+            name: "Demo Project",
+            description: "Fallback project if GitHub API fails",
+            html_url: "https://github.com",
+          },
+        ]);
+
         setLoading(false);
       });
   }, []);
@@ -41,7 +51,10 @@ function Projects() {
   }
 
   return (
-    <section id="projects" className="py-32 max-w-6xl mx-auto px-4">
+    <section
+      id="projects"
+      className="py-32 max-w-6xl mx-auto px-4"
+    >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
