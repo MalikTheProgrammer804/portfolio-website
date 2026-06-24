@@ -9,3 +9,33 @@ body {
   color: white;
   font-family: Inter, sans-serif;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
