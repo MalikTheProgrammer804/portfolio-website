@@ -41,7 +41,7 @@ function Home() {
 
         <div className="flex flex-wrap justify-center gap-4 mt-10">
           <a
-            href="/Malik_Mubashir_Sohail_Resume.pdf"
+            href="/Malik_Mubashir Resume.pdf"
             download
             className="
               bg-cyan-500
